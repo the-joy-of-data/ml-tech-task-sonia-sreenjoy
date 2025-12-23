@@ -337,5 +337,12 @@ if __name__ == "__main__":
         help="Classification threshold"
     )
 
+    parser.add_argument(
+        "--random-state",
+        type=int,
+        default=42,
+        help="Random seed"
+    )
+
     args = parser.parse_args()
     main(args)

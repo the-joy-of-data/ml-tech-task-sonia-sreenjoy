@@ -28,11 +28,6 @@ install:
 	uv sync
 	@echo "✓ Dependencies installed"
 
-train: setup
-	@echo "Training LightGBM classifier from local CSV..."
-	uv run python src/train.py --data $(TRAIN_DATA)
-	@echo "✓ Training complete. Models saved to $(MODEL_DIR)/"
-
 train-hf: setup
 	@echo "Training LightGBM classifier from HuggingFace dataset..."
 	@if [ -z "$(DATASET)" ]; then \

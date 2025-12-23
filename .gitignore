@@ -2,6 +2,7 @@
 # DCMN specific
 env.sh
 .gradio
+*.joblib
 
 *.DS_Store
 
