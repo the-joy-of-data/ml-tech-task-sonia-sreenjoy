@@ -69,12 +69,12 @@ Load directly from HuggingFace Hub:
 ```bash
 # Train from public HuggingFace dataset
 uv run python src/train.py \
-    --dataset-name "username/german-medical-corpus" \
+    --dataset-name "SoniaSolutions/NLP-Tech-Task" \
     --dataset-split "train"
 
 # With custom column names
 uv run python src/train.py \
-    --dataset-name "username/medical-data" \
+    --dataset-name "SoniaSolutions/NLP-Tech-Task" \
     --text-column "sentence" \
     --label-column "label"
 ```
@@ -82,7 +82,7 @@ uv run python src/train.py \
 **Requirements for HuggingFace datasets**:
 - Dataset must have a text column (default: `text`)
 - Dataset must have a binary label column (default: `is_medical`)
-- Labels can be: bool, int (0/1), or strings ("medical"/"non-medical")
+- Labels SHOULD be: bool (only bool supported currently)
 
 **Authentication** (for private datasets):
 ```bash
@@ -105,8 +105,9 @@ make train-hf DATASET="SoniaSolutions/NLP-Tech-Task"
 - `models/lightgbm_model.txt` - Trained classifier
 - `models/feature_extractor.joblib` - TF-IDF + feature pipeline
 - `models/feature_importance.joblib` - Feature rankings
+- `models/model_metadata.joblib` - Model Metadata
 
-**Training time**: ~2-3 minutes on Apple Macbook M1 Pro for 1k samples
+**Training time**: ~2-3 minutes on Apple Macbook M1 Pro for 1k samples (HF dataset)
 
 ---
 

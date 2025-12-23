@@ -1,4 +1,4 @@
-.PHONY: install setup train train-hf evaluate predict clean help
+.PHONY: install train-hf evaluate predict clean help
 
 PYTHON := python3
 VENV := .venv
@@ -16,8 +16,6 @@ help:
 	@echo "Medical Classifier MVP - Makefile"
 	@echo "==========================================="
 	@echo "make install       - Install all dependencies using uv"
-	@echo "make setup         - Download SpaCy German model"
-	@echo "make train         - Train the LightGBM classifier (local CSV)"
 	@echo "make train-hf      - Train from HuggingFace dataset (DEFAULT)"
 	@echo "make evaluate      - Evaluate model performance"
 	@echo "make predict       - Run inference on new samples"
@@ -28,7 +26,7 @@ install:
 	uv sync
 	@echo "✓ Dependencies installed"
 
-train-hf: setup
+train-hf:
 	@echo "Training LightGBM classifier from HuggingFace dataset..."
 	@if [ -z "$(DATASET)" ]; then \
 		echo "Error: Please specify DATASET variable"; \
