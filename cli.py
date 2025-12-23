@@ -92,7 +92,7 @@ def cli():
 @click.option('--input', type=click.Path(exists=True), help='File with texts (one per line)')
 @click.option('--threshold', type=float, default=0.5, help='Classification threshold')
 @click.option('--model-dir', type=str, default='models', help='Model directory')
-def predict(text, input, output, threshold, model_dir):
+def predict(text, input, threshold, model_dir):
     """
     Predict medical/non-medical label for text.
 
