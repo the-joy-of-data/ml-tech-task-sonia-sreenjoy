@@ -99,12 +99,12 @@ uv run python src/train.py --dataset-name "SoniaSolutions/NLP-Tech-Task"
 # HF shared dataset (requires authentication)
 huggingface-cli login
 make train-hf DATASET="SoniaSolutions/NLP-Tech-Task"
+```
 
 **Output**:
 - `models/lightgbm_model.txt` - Trained classifier
 - `models/feature_extractor.joblib` - TF-IDF + feature pipeline
 - `models/feature_importance.joblib` - Feature rankings
-```
 
 **Training time**: ~2-3 minutes on Apple Macbook M1 Pro for 1k samples
 
