@@ -98,8 +98,7 @@ uv run python src/train.py --dataset-name "SoniaSolutions/NLP-Tech-Task"
 ```bash
 # HF shared dataset (requires authentication)
 huggingface-cli login
-uv run python src/train.py \
-    --dataset-name "SoniaSolutions/NLP-Tech-Task"
+make train-hf DATASET="SoniaSolutions/NLP-Tech-Task"
 
 **Output**:
 - `models/lightgbm_model.txt` - Trained classifier
@@ -115,5 +114,5 @@ uv run python src/train.py \
 
 ```bash
 # Basic prediction
-uv run python cli.py predict --text "Der Patient hat Fieber und Husten."
+make predict TEXT="Der Patient hat nach der Operation eine Phlebothrombose im Bereich des Unterschenkels entwickelt."
 ```
