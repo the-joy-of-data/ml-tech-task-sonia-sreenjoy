@@ -1,5 +1,5 @@
 def main():
-    print("Hello from ml-tech-task-sonia-sreenjoy!")
+    print("Medical Text Classifier MVP says hello!")
 
 
 if __name__ == "__main__":
